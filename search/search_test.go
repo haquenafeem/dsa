@@ -23,12 +23,29 @@ var testCases = []struct {
 		FindNumber: 5,
 		Output:     -1,
 	},
+	{
+		Title:      "Searching for number 5 in array [], should return -1 as Output",
+		InputArray: []int{},
+		FindNumber: 5,
+		Output:     -1,
+	},
 }
 
 func Test_Linear(t *testing.T) {
 	for i, testCase := range testCases {
 		t.Log(fmt.Sprintf("[%d]", i+1), testCase.Title)
 		out := Linear(testCase.InputArray, testCase.FindNumber)
+		if testCase.Output != out {
+			t.Log("failed")
+			t.Fail()
+		}
+	}
+}
+
+func Test_Binary(t *testing.T) {
+	for i, testCase := range testCases {
+		t.Log(fmt.Sprintf("[%d]", i+1), testCase.Title)
+		out := Binary(testCase.InputArray, testCase.FindNumber)
 		if testCase.Output != out {
 			t.Log("failed")
 			t.Fail()
