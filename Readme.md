@@ -5,3 +5,9 @@ Discover essential data structures and algorithms implemented with Golang at **d
 - **Searching**
     - Linear
     - Binary
+- **Sorting**
+    - Bubble
+    - Selection
+    - Merge
+- **Data Structures**
+    - Queue
