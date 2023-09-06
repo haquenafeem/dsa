@@ -25,10 +25,15 @@ var testCases = []struct {
 		InputArray:  []int{99, 98, 97, 96},
 		SortedArray: []int{96, 97, 98, 99},
 	},
+	{
+		Title:       "Given array [99,98,97,96], sorted array provided [96, 97, 98, 99,100] (intentional fail)",
+		InputArray:  []int{99, 98, 97, 96},
+		SortedArray: []int{96, 97, 98, 99, 100},
+	},
 }
 
 func checkIfArrayEqual(arr1, arr2 []int) bool {
-	if len(arr2) != len(arr2) {
+	if len(arr1) != len(arr2) {
 		return false
 	}
 
