@@ -3,6 +3,8 @@ package sort
 import (
 	"fmt"
 	"testing"
+
+	"github.com/haquenafeem/dsa/utils"
 )
 
 var testCases = []struct {
@@ -32,25 +34,11 @@ var testCases = []struct {
 	},
 }
 
-func checkIfArrayEqual(arr1, arr2 []int) bool {
-	if len(arr1) != len(arr2) {
-		return false
-	}
-
-	for i := range arr1 {
-		if arr1[i] != arr2[i] {
-			return false
-		}
-	}
-
-	return true
-}
-
 func Test_Bubble(t *testing.T) {
 	for i, testCase := range testCases {
 		t.Log(fmt.Sprintf("[%d]", i+1), testCase.Title)
 		out := Bubble(testCase.InputArray)
-		if !checkIfArrayEqual(out, testCase.SortedArray) {
+		if !utils.CheckIfArrayEqual(out, testCase.SortedArray) {
 			t.Log("failed")
 			t.Fail()
 		}
@@ -61,7 +49,7 @@ func Test_Selection(t *testing.T) {
 	for i, testCase := range testCases {
 		t.Log(fmt.Sprintf("[%d]", i+1), testCase.Title)
 		out := Selection(testCase.InputArray)
-		if !checkIfArrayEqual(out, testCase.SortedArray) {
+		if !utils.CheckIfArrayEqual(out, testCase.SortedArray) {
 			t.Log("failed")
 			t.Fail()
 		}
@@ -72,7 +60,7 @@ func Test_Merge(t *testing.T) {
 	for i, testCase := range testCases {
 		t.Log(fmt.Sprintf("[%d]", i+1), testCase.Title)
 		out := Merge(testCase.InputArray)
-		if !checkIfArrayEqual(out, testCase.SortedArray) {
+		if !utils.CheckIfArrayEqual(out, testCase.SortedArray) {
 			t.Log("failed")
 			t.Fail()
 		}
