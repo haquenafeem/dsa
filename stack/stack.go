@@ -28,6 +28,8 @@ func (s *Stack) Pop() (int, error) {
 		return -1, errors.New("empty stack")
 	}
 
+	s.length--
+
 	value := s.root.data
 	s.root = s.root.next
 
