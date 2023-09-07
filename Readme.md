@@ -11,3 +11,4 @@ Discover essential data structures and algorithms implemented with Golang at **d
     - Merge
 - **Data Structures**
     - Queue
+    - Stack
