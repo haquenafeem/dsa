@@ -1,6 +1,6 @@
 package stack
 
-type node struct {
+type node[T any] struct {
 	data int
-	next *node
+	next *node[T]
 }

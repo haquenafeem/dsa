@@ -2,18 +2,18 @@ package stack
 
 import "errors"
 
-type Stack struct {
-	root   *node
+type Stack[T any] struct {
+	root   *node[T]
 	length int
 }
 
-func (s *Stack) Length() int {
+func (s *Stack[T]) Length() int {
 	return s.length
 }
 
-func (s *Stack) Push(value int) {
+func (s *Stack[T]) Push(value int) {
 	s.length++
-	n := &node{data: value}
+	n := &node[T]{data: value}
 	if s.root == nil {
 		s.root = n
 		return
@@ -23,7 +23,7 @@ func (s *Stack) Push(value int) {
 	s.root = n
 }
 
-func (s *Stack) Pop() (int, error) {
+func (s *Stack[T]) Pop() (int, error) {
 	if s.root == nil {
 		return -1, errors.New("empty stack")
 	}
@@ -36,6 +36,6 @@ func (s *Stack) Pop() (int, error) {
 	return value, nil
 }
 
-func New() *Stack {
-	return &Stack{}
+func New[T any]() *Stack[T] {
+	return &Stack[T]{}
 }

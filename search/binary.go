@@ -4,7 +4,7 @@ package search
 //
 //	does binary search on sorted list
 //	returns index if found, else returns -1
-func Binary(arr []int, n int) int {
+func Binary[T int | float32 | float64](arr []T, n T) int {
 	left := 0
 	right := len(arr) - 1
 

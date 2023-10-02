@@ -4,7 +4,7 @@ package search
 //
 //	searches through the array/slice
 //	returns index if found, else returns -1
-func Linear(arr []int, n int) int {
+func Linear[T int | float32 | float64](arr []T, n T) int {
 	length := len(arr)
 	for i := 0; i < length; i++ {
 		if arr[i] == n {

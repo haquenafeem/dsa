@@ -24,7 +24,7 @@ var testCases = []struct {
 }
 
 func Test_Stack(t *testing.T) {
-	stack := New()
+	stack := New[int]()
 	for i, testCase := range testCases {
 		arr := make([]int, len(testCase.InputArray))
 		t.Logf("[%d] %s", i, testCase.Title)

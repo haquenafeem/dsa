@@ -1,6 +1,6 @@
 package utils
 
-func CheckIfArrayEqual(arr1, arr2 []int) bool {
+func CheckIfArrayEqual[T int | float32 | float64](arr1, arr2 []T) bool {
 	if len(arr1) != len(arr2) {
 		return false
 	}
