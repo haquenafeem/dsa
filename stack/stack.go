@@ -11,7 +11,7 @@ func (s *Stack[T]) Length() int {
 	return s.length
 }
 
-func (s *Stack[T]) Push(value int) {
+func (s *Stack[T]) Push(value T) {
 	s.length++
 	n := &node[T]{data: value}
 	if s.root == nil {
@@ -23,14 +23,15 @@ func (s *Stack[T]) Push(value int) {
 	s.root = n
 }
 
-func (s *Stack[T]) Pop() (int, error) {
+func (s *Stack[T]) Pop() (T, error) {
+	var value T
 	if s.root == nil {
-		return -1, errors.New("empty stack")
+		return value, errors.New("empty stack")
 	}
 
 	s.length--
 
-	value := s.root.data
+	value = s.root.data
 	s.root = s.root.next
 
 	return value, nil
