@@ -12,3 +12,4 @@ Discover essential data structures and algorithms implemented with Golang at **d
 - **Data Structures**
     - Queue
     - Stack
+    - HashTable

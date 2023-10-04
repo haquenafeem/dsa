@@ -28,9 +28,9 @@ var testCases = []struct {
 		SortedArray: []int{96, 97, 98, 99},
 	},
 	{
-		Title:       "Given array [99,98,97,96], sorted array provided [96, 97, 98, 99,100] (intentional fail)",
-		InputArray:  []int{99, 98, 97, 96},
-		SortedArray: []int{96, 97, 98, 99, 100},
+		Title:       "Given array [1000, 98, 2021, -55], sorted array provided [-55, 98, 1000, 2021]",
+		InputArray:  []int{1000, 98, 2021, -55},
+		SortedArray: []int{-55, 98, 1000, 2021},
 	},
 }
 
