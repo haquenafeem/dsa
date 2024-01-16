@@ -2,19 +2,19 @@ package queue
 
 import "errors"
 
-type Queue struct {
-	root   *node
+type Queue[T any] struct {
+	root   *node[T]
 	length int
 }
 
-func (q *Queue) Length() int {
+func (q *Queue[T]) Length() int {
 	return q.length
 }
 
-func (q *Queue) Enqueue(value int) {
+func (q *Queue[T]) Enqueue(value int) {
 	q.length++
 
-	n := &node{data: value}
+	n := &node[T]{data: value}
 	if q.root == nil {
 		q.root = n
 		return
@@ -28,7 +28,7 @@ func (q *Queue) Enqueue(value int) {
 	cur.next = n
 }
 
-func (q *Queue) Dequeue() (int, error) {
+func (q *Queue[T]) Dequeue() (int, error) {
 	if q.root == nil {
 		return -1, errors.New("empty queue")
 	}
@@ -45,6 +45,6 @@ func (q *Queue) Dequeue() (int, error) {
 	return value, nil
 }
 
-func New() *Queue {
-	return &Queue{}
+func New[T any]() *Queue[T] {
+	return &Queue[T]{}
 }

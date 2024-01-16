@@ -1,10 +1,10 @@
 package queue
 
-type node struct {
+type node[T any] struct {
 	data int
-	next *node
+	next *node[T]
 }
 
-func (n *node) hasNext() bool {
+func (n *node[T]) hasNext() bool {
 	return n.next != nil
 }
